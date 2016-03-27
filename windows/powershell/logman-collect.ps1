@@ -6,7 +6,10 @@ $CounterConfigPath = 'c:\code\gosu.monitoring\windows\powershell\counters.config
 $SampleIntervalInSeconds = 10
 $RunForTimeSpan = '00:01:00'
 
-Write-Output (Get-Date -format "yyyy-MM-dd HH:mm:ss") + ": Script starting..."
+$ScriptStartTime = Get-Date -format "yyyy-MM-dd HH:mm:ss"
+
+Write-Output "------------------------------------"
+Write-Output "$ScriptStartTime : Script starting..."
 
 $IsCounterInstalled = (logman query) -match $CounterName
 
